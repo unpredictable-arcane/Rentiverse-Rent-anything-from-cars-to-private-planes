@@ -1,0 +1,235 @@
+/* common Styles */
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    font-family: 'Nunito', sans-serif;
+    font-weight:400;
+}
+
+html{
+    font-size: 62.5%;
+}
+.section-heading {
+    font-size: 12rem;
+    font-weight: 900;
+    color: rgb(35, 38, 68);
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 0.7rem;
+    text-shadow: .4rem .4rem .4rem rgb(150, 120, 120);
+}
+
+/*End of common Styles */
+
+/*Section 1 */
+.section-1 {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(45deg, #daf15b, #0890e4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+.section-1-icons i{
+    font-size: 15rem;
+    color: rgb(118, 124, 189);
+    position: absolute;
+    transform: translate(-50%, -50%) scale(0);
+    text-shadow: 0.2rem 0.2rem 0.2rem #cd9898;
+    transition: transform .3s;
+}
+
+.section-1-icons i.change {
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform .7s .4s;
+}
+/*End of Section 1 */
+
+/* Section 2 */
+
+.section-2 {
+    width: 100%;
+    height: 100vh;
+    background-color: #060505;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10rem 0;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card {
+    width: 30rem;
+    background-color: #fff;
+    padding: 4rem;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 1.5rem 1.5rem 1.5rem #cd9898;
+    position: relative;
+    transform: rotateY(20deg) skewX(-2deg);
+    transition: transform .4s, box-shadow .4s;
+}
+
+.card:hover {
+    transform: roatateY(20deg) skewX(-2deg);
+    box-shadow: 2.5rem 2.5rem 2.5rem #4b3e3e;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -1rem;
+    width: 1rem;
+    height: 100%;
+    background-color: #daf15b;
+    transform: skewY(45deg);
+    transform-origin: right;
+    box-shadow: -.1rem -.1rem 0.2rem #cd9898;
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    top: -1rem;
+    left: 0;
+    width: 100%;
+    height: 1rem;
+    background-color: #37c135;
+    transform: skewX(45deg);
+    transform-origin: bottom;
+    box-shadow: -.1rem -.1rem 0.2rem #cd9898;
+}
+
+.card-img {
+    width: 100%;
+}
+
+.card-name{
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    color: #060505;
+    margin: 1.5rem 0;
+    text-shadow: 0.15rem 0.15rem 0.15rem #4d4747;
+}
+
+.card-btn{
+    width: 70%;
+    background-color: #fff;
+    color: #daf15b;
+    border-radius: 4rem;
+    font-size: 1.5rem;
+    font-weight: 699;
+    letter-spacing: 0.3rem;
+    text-transform: capitalize;
+    border: none;
+    padding: 0.6rem, 0;
+    box-shadow: -0.2rem -0.2rem 0.2rem #cd9898;
+    cursor: pointer;
+
+}
+
+
+/* End of Section 2 */
+
+/* Section 3 */
+section.section-3 {
+    background: linear-gradient(45deg, #0890e4, #878979);
+    padding: 10rem 0;
+}
+
+.cars-collection {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 12rem;
+}
+
+.cars-collection-link{
+    position: relative;
+    margin: 4rem 1rem;
+}
+.cars-collection-link::before{
+    content: "";
+    position: absolute;
+    top: 2vw;
+    left: 80%;
+    width: 0.2rem;
+    height: 0;
+    background-color: #fff;
+    transition: height .5s;
+}
+
+.cars-collection-link::hover::before{
+    height: 80%;
+}
+
+.cars-collection-link::hover::after{
+    width: 90%;
+}
+
+.cars-collection-link::after{
+    content: "";
+    position: absolute;
+    top: 30%;
+    left: 2rem;
+    width: 0;
+    height: 0.2rem;
+    background-color: #fff;
+    transition: width .5s;
+}
+
+
+
+.cars-img{
+    width: 24vw;
+    height: 15vw;
+    object-fit: cover;
+    box-shadow: 0.3rem 0.3rem 0.1rem #cd9898, 0.5rem 0.5rem 0.1rem #4d4747 ;
+}
+
+.cars-name{
+    position: absolute;
+    top: 2.5rem;
+    left: 2.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    width: 0;
+    overflow: hidden;
+
+}
+
+.car-description{
+    position: absolute;
+    bottom: 2.5rem;
+    left: 2rem;
+    width: 70%;
+    font-size: 1.2rem;
+    font-weight: 350;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+/* End of Section 3 */
