@@ -51,7 +51,7 @@ html{
 
 .navbar-link{
     color: #bcabab;
-    margin: .5rem;
+    margin: .7rem;
     display: flex;
     flex-direction: column;
     align-items: center;  
@@ -85,7 +85,7 @@ html{
 }
 
 .navbar-link i{
-    font-size: 8rem;
+    font-size: 4rem;
 }
 .navbar-link span{
     font-size: 3rem;
@@ -97,8 +97,8 @@ html{
 
 .details{
     width: 4rem;
-    height: 6rem;
-    background-color:rgba(92, 246, 58, 0.87);
+    height: 4rem;
+    background-color:rgba(41, 48, 39, 0.87);
     position: fixed;
     top: 1rem;
     left: 4rem;
@@ -110,7 +110,7 @@ html{
 } 
 
 .details.change{
-    top: 15rem;
+    top: 12rem;
     transition: top 0.4s;
 }
 
@@ -168,7 +168,7 @@ html{
 .section-2 {
     width: 100%;
     height: 100vh;
-    background-color: #060505;
+    background-color: #b16969;
     display:flex;
     flex-direction: column;
     justify-content: space-between;
@@ -219,7 +219,7 @@ html{
     left: 0;
     width: 100%;
     height: 1rem;
-    background-color: #5ecd5c;
+    background-color: #313731;
     transform: skewX(45deg);
     transform-origin: bottom;
     box-shadow: -.1rem -.1rem 0.2rem #cd9898;
