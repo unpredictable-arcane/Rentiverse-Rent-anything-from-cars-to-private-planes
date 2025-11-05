@@ -1,29 +1,25 @@
-const icons = document.querySelectorAll(".section-1-icons i");
-let currentIconIndex = 0; // Start with the first icon (0-indexed)
+document.querySelector('.details').addEventListener('click',()=>{
+    document.querySelectorAll('.target').forEach((item)=>{
+        item.classList.toggle('change');
+    });
+});
 
-// Initialize the first icon with the 'change' class
-if (icons.length > 0) {
-  icons[currentIconIndex].classList.add("change");
-}
+const icons = document.querySelectorAll('.section-1-icons i');
+
+let i = 1;
 
 setInterval(() => {
-  // Remove 'change' class from the current icon
-  if (icons.length > 0) {
-    // Check to ensure icons exist
-    icons[currentIconIndex].classList.remove("change");
-  }
+ i++;
 
-  // Move to the next icon
-  currentIconIndex++;
+ const icon = document.querySelector('.section-1-icons.change');
 
-  // If we've gone past the last icon, loop back to the first one
-  if (currentIconIndex >= icons.length) {
-    currentIconIndex = 0;
-  }
+ icon.classList.remove('change');
 
-  // Add 'change' class to the new current icon
-  if (icons.length > 0) {
-    // Check to ensure icons exist
-    icons[currentIconIndex].classList.add("change");
-  }
-}, 1000);
+ if(i > icons.length) {
+    icons[0].classList.add('change');
+    i = 1;
+ } else {
+    icon.nextElementSibling.classList.add('change');
+ }
+
+}, 4000);

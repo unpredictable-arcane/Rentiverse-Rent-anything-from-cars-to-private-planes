@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
 /* common Styles */
 *{
     margin:0;
@@ -24,6 +27,105 @@ html{
 
 /*End of common Styles */
 
+/* Navbar */
+.navbar {
+    width: 100%;
+    height: 10rem;
+    background-color: #100f0f;
+    top: -14rem;
+    z-index: 100;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0.2rem 0.2rem 0.2rem #fff2;
+    transition:color .3s;
+    transition: top .4s;
+}
+
+.navbar.change{
+    top:0;
+    transition: top 0.4s;
+}
+
+
+.navbar-link{
+    color: #bcabab;
+    margin: .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    justify-content: center;
+    opacity: 0;
+    transition: color .3s, opacity .2s;
+}
+
+.change .navbar-link{
+    opacity: 1;
+}
+
+.change.navbar-link:nth-child(1){
+    transition: opacity .4s .7s color .3s;
+}
+.change.navbar-link:nth-child(2){
+    transition: opacity .4s .8s color .3s;
+}
+.change.navbar-link:nth-child(3){
+    transition: opacity .4s .9s color .3s;
+}
+.change.navbar-link:nth-child(4){
+    transition: opacity .4s 1s color .3s;
+}
+.change.navbar-link:nth-child(5){
+    transition: opacity .4s 1.1s color .3s;
+}
+
+.navbar-link:hover{
+    color: #757fed; 
+}
+
+.navbar-link i{
+    font-size: 8rem;
+}
+.navbar-link span{
+    font-size: 3rem;
+    font-weight: 850;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    margin-top:.6rem ;
+}
+
+.details{
+    width: 4rem;
+    height: 6rem;
+    background-color:rgba(92, 246, 58, 0.87);
+    position: fixed;
+    top: 1rem;
+    left: 4rem;
+    border-radius: 30rem 30rem 15rem 15rem;
+    box-shadow: .2rem .2rem .2rem #cd9898, -.2rem -.2rem .2rem #4d4747;
+    cursor: pointer;
+    z-index: 100;
+    transition: top 0.4s .3s;
+} 
+
+.details.change{
+    top: 15rem;
+    transition: top 0.4s;
+}
+
+.details::before{
+    content:"";
+    width: .3rem;
+    height: 13rem;
+    background-color: #191414;
+    position: absolute;
+    top: -15rem;
+    left:calc(50% - .15rem);
+    box-shadow: 0.1rem 0 0.3rem #5d6a4d;
+}
+/* End of Navbar */
+
 /*Section 1 */
 .section-1 {
     width: 100%;
@@ -35,9 +137,19 @@ html{
     justify-content: space-evenly;
 }
 
+.section-heading{
+    font-size: 10rem;
+    font-weight: 800;
+    color: #daf15b;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 0.5rem;
+    text-shadow: .3.5rem .3.5rem .3.5rem #cd9898
+}
+
 
 .section-1-icons i{
-    font-size: 15rem;
+    font-size: 36rem;
     color: rgb(118, 124, 189);
     position: absolute;
     transform: translate(-50%, -50%) scale(0);
@@ -79,11 +191,11 @@ html{
     box-shadow: 1.5rem 1.5rem 1.5rem #cd9898;
     position: relative;
     transform: rotateY(20deg) skewX(-2deg);
-    transition: transform .4s, box-shadow .4s;
+    transition: transform .7s, box-shadow .7s;
 }
 
 .card:hover {
-    transform: roatateY(20deg) skewX(-2deg);
+    transform: roatateY(20deg) skewX(-2deg) translateY(-3rem);
     box-shadow: 2.5rem 2.5rem 2.5rem #4b3e3e;
 }
 
@@ -107,7 +219,7 @@ html{
     left: 0;
     width: 100%;
     height: 1rem;
-    background-color: #37c135;
+    background-color: #5ecd5c;
     transform: skewX(45deg);
     transform-origin: bottom;
     box-shadow: -.1rem -.1rem 0.2rem #cd9898;
@@ -124,7 +236,7 @@ html{
     letter-spacing: 0.5rem;
     color: #060505;
     margin: 1.5rem 0;
-    text-shadow: 0.15rem 0.15rem 0.15rem #4d4747;
+    text-shadow: 0.25rem 0.25rem 0.25rem #4d4747;
 }
 
 .card-btn{
@@ -149,7 +261,7 @@ html{
 /* Section 3 */
 section.section-3 {
     background: linear-gradient(45deg, #0890e4, #878979);
-    padding: 10rem 0;
+    padding: 7rem 0;
 }
 
 .cars-collection {
@@ -172,14 +284,15 @@ section.section-3 {
     width: 0.2rem;
     height: 0;
     background-color: #fff;
+    z-index: 10;
     transition: height .5s;
 }
 
-.cars-collection-link::hover::before{
+.cars-collection-link:hover::before{
     height: 80%;
 }
 
-.cars-collection-link::hover::after{
+.cars-collection-link:hover::after{
     width: 90%;
 }
 
@@ -188,7 +301,7 @@ section.section-3 {
     position: absolute;
     top: 30%;
     left: 2rem;
-    width: 0;
+    width:0;
     height: 0.2rem;
     background-color: #fff;
     transition: width .5s;
@@ -196,25 +309,39 @@ section.section-3 {
 
 
 
-.cars-img{
+.car-img{
     width: 24vw;
     height: 15vw;
     object-fit: cover;
-    box-shadow: 0.3rem 0.3rem 0.1rem #cd9898, 0.5rem 0.5rem 0.1rem #4d4747 ;
+    box-shadow: 0.3rem 0.3rem 0.1rem #ff3333, 0.5rem 0.5rem 0.1rem #2bf4df ;
+    transition: all .5s;
 }
 
-.cars-name{
+.cars-collection-link:hover .car-img{
+    box-shadow: 1rem 1rem 0.1rem #ff3333, 2rem 2rem 0.1rem #2bf4df ;
+    filter: blur(.5rem);
+    opacity: .7;
+    transform: scale(1.1);
+}
+
+.car-name{
     position: absolute;
     top: 2.5rem;
     left: 2.5rem;
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: 650;
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     width: 0;
     overflow: hidden;
+    transition: width .4s;
 
+}
+
+.cars-collection-link:hover .car-name{
+    width: 100%;
+    transition: width 1.7s .3s;
 }
 
 .car-description{
@@ -229,7 +356,185 @@ section.section-3 {
     letter-spacing: 0.1rem;
     opacity: 0;
     visibility: hidden;
+    transition: opacity .5s;
+}
+
+.cars-collection-link:hover .car-description{
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s .8s;
 }
 
 
 /* End of Section 3 */
+
+/* Section 4 */
+.section-4 {
+    width: 100%;
+    height: 35vh;
+    background: linear-gradient(45deg, #d9df41, #469ed5);
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-around;
+    padding: 5rem 0;
+    position: relative;
+}
+
+.section-4-text {
+    text-transform: uppercase;
+}
+
+.section-4-heading {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #757fed;
+}
+
+.section-4-paragraph {
+    font-size: 1.3rem;
+    color: #333;
+}
+
+.signup-form {
+    display: flex;
+    align-items: center;
+}
+
+.signup-form-input {
+    width: 25rem;
+    padding: 1rem;
+    font-size: 1.4rem;
+    border: 0.3rem solid #757fed;
+    height: 4rem;
+    letter-spacing: 0.1rem;
+    color: #cd9898;
+    font-weight: 600;
+}
+
+.signup-form-input::placeholder {
+    color: #0674b8;
+}
+
+.signup-form-btn {
+    width: 3.5rem;
+    height: 3rem;
+    background-color: #bdc0da;
+    position: relative;
+    left: -5rem;
+    color: #87fd00;
+    cursor: pointer;
+    font-size: 2rem;
+    border: none;
+}
+
+.copyright {
+    position: absolute;
+    bottom: 2rem;
+    font-size: 1.7rem;
+    font-weight: 350;
+    color: #000000;
+    letter-spacing: 0.1rem;
+    padding-top: 5rem;
+    text-align: left;
+    width: 100%;
+}
+/* End of Section 4 */
+
+/* Responsive Design */
+@media(max-width:1400px){
+    html {
+        font-size: 50%;
+    }
+
+    .section-2 {
+        height: auto;
+        padding: 10rem 0 12rem 0;
+    }
+
+    .cards-container {
+        margin-top: 12rem;
+    }
+
+    .cars-collection-link {
+       width: 40rem;
+       height: 25rem; 
+       margin: 7rem;
+    }
+
+    .car-img {
+     width: 100%;
+     height: 100%;
+    }
+}
+
+@media(max-width: 1000px){
+.section-heading {
+  font-size: 10rem;
+  margin: .7rem;
+}
+
+.section-1-icons i {
+    font-size: 23rem;
+}
+
+.cards-container {
+    flex-wrap: wrap;
+}
+
+.section-4 {
+    height: 35rem;
+ }
+}
+
+@media(max-width:900px){
+ .navbar-link{
+     margin: 2rem;
+}
+
+.navbar-link i {
+    font-size: 4rem;
+}
+
+.navbar-link span {
+    font-size: 2rem;
+ }
+} 
+
+@media(max-width:700px){
+    .section-heading{
+        font-size: 8rem;
+        margin: .10rem;
+}
+
+.section-1-icons i {
+    font-size: 18rem;
+}
+
+.menu{
+    left: 2rem;
+}
+
+.section-4{
+    height: 35rem;
+    flex-direction:column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.section-4-text {
+    margin-bottom: 8rem;
+ }
+}
+
+@media(max-width:550px) {
+    html {
+        font-size: 40%;
+    }
+
+    .navbar-link{
+        margin: 0 0.6rem;
+    }
+}
+    /* End of Responsive Design */
+
+
