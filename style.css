@@ -140,7 +140,7 @@ html{
 .section-heading{
     font-size: 10rem;
     font-weight: 800;
-    color: #daf15b;
+    color: #000000;
     text-align: center;
     text-transform: capitalize;
     letter-spacing: 0.5rem;
@@ -195,7 +195,7 @@ html{
 }
 
 .card:hover {
-    transform: roatateY(20deg) skewX(-2deg) translateY(-3rem);
+    transform: rotateY(20deg) skewX(-2deg) translateY(-3rem);
     box-shadow: 2.5rem 2.5rem 2.5rem #4b3e3e;
 }
 
